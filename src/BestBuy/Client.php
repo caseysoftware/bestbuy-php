@@ -8,9 +8,9 @@ class Client
 {
     const USER_AGENT = 'bestbuy-php/0.0.1';
 
-    protected $baseURI  = 'http://api.remix.bestbuy.com/v1/';
-    protected $apiKey   = '';
-    protected $client   = null;
+    protected $baseURI    = 'http://api.remix.bestbuy.com/v1/';
+    protected $apiKey     = '';
+    protected $httpClient = null;
 
     protected $format   = 'json';
 
@@ -25,8 +25,8 @@ class Client
     public function __construct($key, $httpClient = null)
     {
         $this->apiKey = $key;
-        $this->client = (is_null($httpClient)) ? new Http\Client($this->baseURI) : $httpClient;
-        $this->client->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
+        $this->httpClient = (is_null($httpClient)) ? new Http\Client($this->baseURI) : $httpClient;
+        $this->httpClient->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
     }
 
     /**
@@ -41,7 +41,7 @@ class Client
 
     public function get($url, array $parameters = array())
     {
-        $request = $this->client->get($url, array(), array('exceptions' => false));
+        $request = $this->httpClient->get($url, array(), array('exceptions' => false));
         foreach($parameters as $key => $value) {
             $request->getQuery()->set($key, $value);
         }
