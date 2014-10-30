@@ -17,6 +17,6 @@
         "guzzle/guzzle": "~3.9.0"
     },
     "autoload": {
-        "psr-4": { "Clarify\\": "src/BestBuy/"}
+        "psr-4": { "BestBuy\\": "src/BestBuy/"}
     }
 }
