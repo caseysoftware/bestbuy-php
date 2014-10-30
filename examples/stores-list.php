@@ -7,5 +7,9 @@ require '../vendor/autoload.php';
 $client = new \BestBuy\Client($apikey);
 
 $stores = $client->stores->index();
+$storeList = $stores['stores'];
 
-echo '<pre>'; print_r($stores);
+foreach($storeList as $store) {
+    echo $store['name'];
+    echo "<br />\n";
+}
