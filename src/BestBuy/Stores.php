@@ -13,6 +13,14 @@ class Stores extends Resource
     {
         $data = $this->client->get('stores(storeId=' . $store_id . ')');
 
-        return $data['stores'][0];
+        if (!isset($data['stores'])) {
+            // todo: this only happens on an error.. should we throw an exception?
+            return $data;
+        }
+        if (isset($data['stores'][0])) {
+            return $data['stores'][0];
+        } else {
+            return array();
+        }
     }
 }

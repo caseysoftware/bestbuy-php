@@ -6,7 +6,7 @@ require '../vendor/autoload.php';
 
 $client = new \BestBuy\Client($apikey);
 
-$store = $client->stores->load(548);
+$store = $client->stores->load(5000000);
 
 echo '<pre>';
 print_r($store);
