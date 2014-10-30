@@ -13,6 +13,11 @@ class Client
     protected $client   = null;
 
     protected $format   = 'json';
+
+    public $response = null;
+    public $httpCode = null;
+    public $success  = false;
+
     /**
      * @param $key
      * @param null $httpClient
@@ -32,6 +37,29 @@ class Client
     public function setFormat($format = 'json')
     {
         $this->format = $format;
+    }
+
+    public function get($url, array $parameters = array())
+    {
+        $request = $this->client->get($url, array(), array('exceptions' => false));
+        foreach($parameters as $key => $value) {
+            $request->getQuery()->set($key, $value);
+        }
+        $request->getQuery()->set('format', $this->format);
+        $request->getQuery()->set('apiKey', $this->apiKey);
+
+        $this->response = $request->send();
+        $this->httpCode = $this->response->getStatusCode();
+        $this->success  = $this->response->isSuccessful();
+
+        switch($this->format) {
+            case 'xml':
+                return $this->response->xml();
+            default:
+                return $this->response->json();
+        }
+
+        return $this->response;
     }
 
     public function __get($name)
