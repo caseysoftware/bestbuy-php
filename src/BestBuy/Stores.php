@@ -6,11 +6,6 @@ class Stores extends Resource
 {
     protected $resource = 'stores';
 
-    public function index($page = 1, $pagesize = 10)
-    {
-        return $this->client->get($this->resource, array('pageSize' => $pagesize, 'page' => $page));
-    }
-
     public function load($store_id)
     {
         $data = $this->client->get('stores(storeId=' . $store_id . ')');

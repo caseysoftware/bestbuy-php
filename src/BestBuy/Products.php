@@ -6,11 +6,6 @@ class Products extends Resource
 {
     protected $resource = 'products';
 
-    public function index($page = 1, $pagesize = 10)
-    {
-        return $this->client->get($this->resource, array('pageSize' => $pagesize, 'page' => $page));
-    }
-
     public function load($product_id)
     {
         $data = $this->client->get('products(productId=' . $product_id . ')');
