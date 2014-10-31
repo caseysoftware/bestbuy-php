@@ -21,6 +21,9 @@ class Client
     /**
      * @param $key
      * @param null $httpClient
+     *
+     * @property mixed  stores      This is the stores subresource of the client.
+     * @property mixed  products    This is the products subresource of the client.
      */
     public function __construct($key, $httpClient = null)
     {
