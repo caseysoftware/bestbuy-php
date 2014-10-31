@@ -62,11 +62,19 @@ class Client
         return $this->response;
     }
 
+    /**
+     * @param $name
+     * @return Products|Stores
+     * @throws \Exception
+     */
     public function __get($name)
     {
         switch($name) {
             case 'stores':
                 return new Stores($this);
+                break;
+            case 'products':
+                return new Products($this);
                 break;
             default:
                 throw new \Exception($name . ' is not a recognized resource.');

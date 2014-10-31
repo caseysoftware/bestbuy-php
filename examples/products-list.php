@@ -6,7 +6,11 @@ require '../vendor/autoload.php';
 
 $client = new \BestBuy\Client($apikey);
 
-$store = $client->stores->load(123);
+$products = $client->products->index(1, 100);
 
-echo '<pre>';
-print_r($store);
+$productList = $products['products'];
+
+foreach($productList as $product) {
+    echo $product['name'];
+    echo "<br />\n";
+}
