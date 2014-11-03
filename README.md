@@ -34,3 +34,8 @@ Finally, require Composer's autoloader in your PHP script:
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
+## TODO
+
+*  Implement lists for ~~Products~~, ~~Stores~~, Reviews, Categories, and Recommendations
+*  Implement pagination for ~~Products~~, ~~Stores~~, Reviews, Categories, and Recommendations
+*  Add more to this todo list
