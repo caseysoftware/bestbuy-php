@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/bestbuy-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/bestbuy-php/?branch=master)
+
 PHP Helper Library for Best Buy
 ================================
 
