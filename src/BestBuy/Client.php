@@ -79,6 +79,9 @@ class Client
             case 'products':
                 return new Products($this);
                 break;
+            case 'reviews':
+                return new Reviews($this);
+                break;
             default:
                 throw new \Exception($name . ' is not a recognized resource.');
         }
