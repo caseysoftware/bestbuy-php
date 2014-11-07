@@ -61,8 +61,6 @@ class Client
             default:
                 return $this->response->json();
         }
-
-        return $this->response;
     }
 
     /**
