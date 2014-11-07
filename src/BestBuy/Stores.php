@@ -4,6 +4,8 @@ namespace BestBuy;
 
 class Stores extends Resource
 {
+    protected $resource = 'stores';
+
     public function load($store_id)
     {
         $data = $this->client->get('stores(storeId=' . $store_id . ')');

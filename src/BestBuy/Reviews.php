@@ -2,4 +2,7 @@
 
 namespace BestBuy;
 
-class Reviews extends Resource { }
+class Reviews extends Resource
+{
+    protected $resource = 'reviews';
+}
