@@ -6,9 +6,9 @@ class Stores extends Resource
 {
     protected $resource = 'stores';
 
-    public function load($store_id)
+    public function load($resource_id)
     {
-        $data = $this->client->get('stores(storeId=' . $store_id . ')');
+        $data = $this->client->get($this->resource . '(storeId=' . $resource_id . ')');
 
         if (!isset($data[$this->resource])) {
             // todo: this only happens on an error.. should we throw an exception?
