@@ -4,8 +4,6 @@ namespace BestBuy;
 
 class Products extends Resource
 {
-    protected $resource = 'products';
-
     public function load($product_id)
     {
         $data = $this->client->get('products(productId=' . $product_id . ')');

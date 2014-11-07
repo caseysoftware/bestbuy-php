@@ -2,7 +2,4 @@
 
 namespace BestBuy;
 
-class Categories extends Resource
-{
-    protected $resource = 'categories';
-}
+class Categories extends Resource { }
