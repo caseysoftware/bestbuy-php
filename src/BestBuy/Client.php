@@ -72,22 +72,12 @@ class Client
      */
     public function __get($name)
     {
-        switch($name) {
-            case 'stores':
-                return new Stores($this);
-                break;
-            case 'products':
-                return new Products($this);
-                break;
-            case 'reviews':
-                return new Reviews($this);
-                break;
-            case 'categories':
-                return new Categories($this);
-                break;
-            default:
-                throw new \Exception($name . ' is not a recognized resource.');
+        $classname = '\\BestBuy\\' . ucwords($name);
+
+        if (class_exists($classname)) {
+            return new $classname($this);
         }
 
+        throw new \Exception($name . ' is not a recognized resource.');
     }
 }
