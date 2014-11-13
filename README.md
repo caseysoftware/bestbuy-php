@@ -38,6 +38,20 @@ require __DIR__.'/vendor/autoload.php';
 ```
 ## TODO
 
-*  Implement lists for ~~Products~~, ~~Stores~~, Reviews, Categories, and Recommendations
+*  Implement lists for ~~Products~~, ~~Stores~~, ~~Reviews~~, ~~Categories~~, and Recommendations
 *  Implement pagination for ~~Products~~, ~~Stores~~, Reviews, Categories, and Recommendations
-*  Add more to this todo list
+*  Search and return product information for a product based on a description or SKU?
+*  Search and return products based on review criteria
+*  Search and return product based on model number
+*  Search for what is included with a product, accessory skus and related SKUs
+*  All stores within a city
+*  All stores within a zipcode
+*  Stores closest to a specified geo-location
+*  Stores within a radius from a specific location
+*  Returns reviews for a specific product
+*  Returns reviews for a list of products
+*  Returns products with a rating greater then 4
+*  Returns reviews submitted on a specific date
+*  Return category information using category identifier
+*  Return category information using category name
+*  Example Trending Products endpoint
