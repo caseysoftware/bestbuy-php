@@ -1,0 +1,7 @@
+<phpunit bootstrap="../credentials.php">
+    <testsuites>
+        <testsuite name="Best Buy's Test Suite">
+            <directory>.</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
