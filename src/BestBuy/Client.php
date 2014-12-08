@@ -44,12 +44,13 @@ class Client
 
     public function get($url, array $parameters = array())
     {
+        $parameters['format'] = $this->format;
+        $parameters['apiKey'] = $this->apiKey;
+
         $request = $this->httpClient->get($url, array(), array('exceptions' => false));
         foreach($parameters as $key => $value) {
             $request->getQuery()->set($key, $value);
         }
-        $request->getQuery()->set('format', $this->format);
-        $request->getQuery()->set('apiKey', $this->apiKey);
 
         $this->response = $request->send();
         $this->httpCode = $this->response->getStatusCode();
