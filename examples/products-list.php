@@ -11,6 +11,5 @@ $products = $client->products->index(1, 100);
 $productList = $products['products'];
 
 foreach($productList as $product) {
-    echo $product['name'];
-    echo "<br />\n";
+    echo $product['name'] . "\n";
 }

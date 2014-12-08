@@ -8,5 +8,4 @@ $client = new \BestBuy\Client($apikey);
 
 $product = $client->products->load(1218360617202);
 
-echo '<pre>';
 print_r($product);

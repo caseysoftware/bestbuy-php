@@ -11,6 +11,5 @@ $categories = $client->categories->index(1, 100);
 $categoryList = $categories['categories'];
 
 foreach($categoryList as $category) {
-    echo $category['name'];
-    echo "<br />\n";
+    echo $category['name'] . "\n";
 }

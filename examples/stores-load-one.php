@@ -8,5 +8,4 @@ $client = new \BestBuy\Client($apikey);
 
 $store = $client->stores->load(123);
 
-echo '<pre>';
 print_r($store);

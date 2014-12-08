@@ -11,6 +11,5 @@ $stores = $client->stores->index(1, 100);
 $storeList = $stores['stores'];
 
 foreach($storeList as $store) {
-    echo $store['name'];
-    echo "<br />\n";
+    echo $store['name'] . "\n";
 }

@@ -11,6 +11,5 @@ print_r($reviews);
 $reviewList = $reviews['reviews'];
 
 foreach($reviewList as $review) {
-    echo $review['title'];
-    echo "<br />\n";
+    echo $review['title'] . "\n";
 }
