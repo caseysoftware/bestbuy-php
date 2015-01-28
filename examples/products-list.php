@@ -5,11 +5,8 @@ require '../credentials.php';
 require '../vendor/autoload.php';
 
 $client = new \BestBuy\Client($apikey);
-
 $products = $client->products->index(1, 100);
 
-$productList = $products['products'];
-
-foreach($productList as $product) {
-    echo $product['name'] . "\n";
+foreach($products as $product) {
+    echo $product->name . "\n";
 }

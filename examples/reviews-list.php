@@ -7,9 +7,7 @@ require '../vendor/autoload.php';
 $client = new \BestBuy\Client($apikey);
 
 $reviews = $client->reviews->index(1, 100);
-print_r($reviews);
-$reviewList = $reviews['reviews'];
 
-foreach($reviewList as $review) {
-    echo $review['title'] . "\n";
+foreach($reviews as $review) {
+    echo $review->title . "\n";
 }

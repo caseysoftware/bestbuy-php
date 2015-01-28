@@ -2,11 +2,13 @@
 
 namespace BestBuy\Resources;
 
-abstract class Base
+abstract class Base implements \Iterator
 {
     protected $client = null;
     protected $resource = null;
     protected $position = 0;
+
+    public $data = '';
 
     public function __construct(\BestBuy\Client $client)
     {
@@ -15,7 +17,10 @@ abstract class Base
 
     public function index($page = 1, $pagesize = 10)
     {
-        return $this->client->get($this->resource, array('pageSize' => $pagesize, 'page' => $page));
+        $result = $this->client->get($this->resource, array('pageSize' => $pagesize, 'page' => $page));
+        $this->data = $result[$this->resource];
+
+        return $this;
     }
 
     public function load($resource_id)
@@ -33,40 +38,42 @@ abstract class Base
         }
     }
 
-//    public function bind($hash)
-//    {
-//        foreach ($hash as $key => $value) {
-//            $this->$key = $value;
-//        }
-//    }
-//
-//    public function rewind()
-//    {
-//        $this->position = 0;
-//    }
-//
-//    public function current()
-//    {
-//        return $this->data[$this->position];
-//    }
-//
-//    public function key()
-//    {
-//        return $this->position;
-//    }
-//
-//    public function next()
-//    {
-//        $this->position++;
-//    }
-//
-//    public function valid()
-//    {
-//        return isset($this->data[$this->position]);
-//    }
-//
-//    public function count()
-//    {
-//        return count($this->data);
-//    }
+    public function bind($hash)
+    {
+        foreach ($hash as $key => $value) {
+            $this->$key = $value;
+        }
+    }
+
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    public function current()
+    {
+        $this->bind($this->data[$this->position]);
+
+        return $this;
+    }
+
+    public function key()
+    {
+        return $this->position;
+    }
+
+    public function next()
+    {
+        $this->position++;
+    }
+
+    public function valid()
+    {
+        return isset($this->data[$this->position]);
+    }
+
+    public function count()
+    {
+        return count($this->data);
+    }
 }
