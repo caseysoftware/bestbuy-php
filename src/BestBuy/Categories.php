@@ -2,7 +2,7 @@
 
 namespace BestBuy;
 
-class Categories extends Resource
+class Categories extends \BestBuy\Resources\Base
 {
     protected $resource = 'categories';
 }

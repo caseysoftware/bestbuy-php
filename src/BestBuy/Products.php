@@ -2,7 +2,7 @@
 
 namespace BestBuy;
 
-class Products extends Resource
+class Products extends \BestBuy\Resources\Base
 {
     protected $resource = 'products';
     protected $resourceId = 'productId';

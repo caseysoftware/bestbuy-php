@@ -1,11 +1,12 @@
 <?php
 
-namespace BestBuy;
+namespace BestBuy\Resources;
 
-abstract class Resource
+abstract class Base
 {
     protected $client = null;
     protected $resource = null;
+    protected $position = 0;
 
     public function __construct(\BestBuy\Client $client)
     {
@@ -31,4 +32,41 @@ abstract class Resource
             return array();
         }
     }
+
+//    public function bind($hash)
+//    {
+//        foreach ($hash as $key => $value) {
+//            $this->$key = $value;
+//        }
+//    }
+//
+//    public function rewind()
+//    {
+//        $this->position = 0;
+//    }
+//
+//    public function current()
+//    {
+//        return $this->data[$this->position];
+//    }
+//
+//    public function key()
+//    {
+//        return $this->position;
+//    }
+//
+//    public function next()
+//    {
+//        $this->position++;
+//    }
+//
+//    public function valid()
+//    {
+//        return isset($this->data[$this->position]);
+//    }
+//
+//    public function count()
+//    {
+//        return count($this->data);
+//    }
 }
