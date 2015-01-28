@@ -77,6 +77,6 @@ class Client
             return new $classname($this);
         }
 
-        throw new \Exception($name . ' is not a recognized resource.');
+        throw new \BestBuy\Exceptions\InvalidResourceException('Not supported');
     }
 }
