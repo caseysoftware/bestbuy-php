@@ -5,7 +5,6 @@ require '../credentials.php';
 require '../vendor/autoload.php';
 
 $client = new \BestBuy\Client($apikey);
-
-$product = $client->products->load(1218360617202);
+$product = $client->products->load(1788194);
 
 print_r($product);
