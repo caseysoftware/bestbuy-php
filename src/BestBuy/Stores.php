@@ -15,4 +15,11 @@ class Stores extends \BestBuy\Resources\Base
         return $this;
     }
 
+    public function byZipcode($zipcode)
+    {
+        $result = $this->client->get($this->resource . '(postalCode=' . $zipcode . ')');
+        $this->data = $result[$this->resource];
+
+        return $this;
+    }
 }
