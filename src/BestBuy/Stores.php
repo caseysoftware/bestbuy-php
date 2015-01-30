@@ -9,15 +9,17 @@ class Stores extends \BestBuy\Resources\Base
 
     public function byCity($city)
     {
-        $result = $this->client->get($this->resource . '(city=' . $city . ')');
-        $this->data = $result[$this->resource];
-
-        return $this;
+        return $this->byValue('city', $city);
     }
 
     public function byZipcode($zipcode)
     {
-        $result = $this->client->get($this->resource . '(postalCode=' . $zipcode . ')');
+        return $this->byValue('postalCode', $zipcode);
+    }
+
+    protected function byValue($name, $value)
+    {
+        $result = $this->client->get($this->resource . '(' . $name . '=' . $value . ')');
         $this->data = $result[$this->resource];
 
         return $this;
