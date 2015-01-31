@@ -16,12 +16,4 @@ class Stores extends \BestBuy\Resources\Base
     {
         return $this->byValue('postalCode', $zipcode);
     }
-
-    protected function byValue($name, $value)
-    {
-        $result = $this->client->get($this->resource . '(' . $name . '=' . $value . ')');
-        $this->data = $result[$this->resource];
-
-        return $this;
-    }
 }

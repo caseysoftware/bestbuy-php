@@ -34,7 +34,15 @@ abstract class Base implements \Iterator
         return $this;
     }
 
-    public function bind($hash)
+    protected function byValue($name, $value)
+    {
+        $result = $this->client->get($this->resource . '(' . $name . '=' . $value . ')');
+        $this->data = $result[$this->resource];
+
+        return $this;
+    }
+
+    protected function bind($hash)
     {
         foreach ($hash as $key => $value) {
             $this->$key = $value;
