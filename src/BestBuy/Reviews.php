@@ -15,4 +15,9 @@ class Reviews extends \BestBuy\Resources\Base
     {
         return $this->byValue('sku', $sku);
     }
+
+    public function byDate($date)
+    {
+        return $this->byValue('submissionTime', $date);
+    }
 }
