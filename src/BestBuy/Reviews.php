@@ -13,11 +13,11 @@ class Reviews extends \BestBuy\Resources\Base
 
     public function bySku($sku)
     {
-        return $this->byValue('sku', $sku);
+        return $this->byValue(array('sku' => '=' . $sku));
     }
 
     public function byDate($date)
     {
-        return $this->byValue('submissionTime', $date);
+        return $this->byValue(array('submissionTime' => '=' . $date));
     }
 }

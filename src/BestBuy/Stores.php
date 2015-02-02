@@ -9,11 +9,11 @@ class Stores extends \BestBuy\Resources\Base
 
     public function byCity($city)
     {
-        return $this->byValue('city', $city);
+        return $this->byValue(array('city' => '=' . $city));
     }
 
     public function byZipcode($zipcode)
     {
-        return $this->byValue('postalCode', $zipcode);
+        return $this->byValue(array('postalCode' => '=' . $zipcode));
     }
 }

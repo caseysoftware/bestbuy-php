@@ -9,6 +9,6 @@ class Categories extends \BestBuy\Resources\Base
 
     public function byName($name)
     {
-        return $this->byValue('name', $name);
+        return $this->byValue(array('name' => '='. $name));
     }
 }

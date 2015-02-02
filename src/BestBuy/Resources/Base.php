@@ -34,9 +34,14 @@ abstract class Base implements \Iterator
         return $this;
     }
 
-    protected function byValue($name, $value)
+    protected function byValue(array $params)
     {
-        $result = $this->client->get($this->resource . '(' . $name . '=' . $value . ')');
+
+        foreach($params as $key => $value) {
+            $filters[] = $key . $value;
+        }
+
+        $result = $this->client->get($this->resource . '(' . implode('&', $filters) . ')');
         $this->data = $result[$this->resource];
 
         return $this;
