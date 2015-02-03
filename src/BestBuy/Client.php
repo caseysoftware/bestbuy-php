@@ -66,7 +66,7 @@ class Client
 
     /**
      * @param $name
-     * @return Products|Stores
+     * @return Categories|Products|Reviews|Stores
      * @throws \Exception
      */
     public function __get($name)
