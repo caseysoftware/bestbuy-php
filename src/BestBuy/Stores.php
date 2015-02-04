@@ -12,8 +12,12 @@ class Stores extends \BestBuy\Resources\Base
         return $this->byValue(array('city' => '=' . $city));
     }
 
-    public function byZipcode($zipcode)
+    public function byZipcode($zipcode, $radius = 0)
     {
-        return $this->byValue(array('postalCode' => '=' . $zipcode));
+        if ($radius) {
+            return $this->byValue(array('area('. $zipcode .',' . $radius . ')' => ''));
+        } else {
+            return $this->byValue(array('postalCode' => '=' . $zipcode));
+        }
     }
 }
