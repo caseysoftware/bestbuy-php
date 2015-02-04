@@ -20,4 +20,13 @@ class Reviews extends \BestBuy\Resources\Base
     {
         return $this->byValue(array('submissionTime' => '=' . $date));
     }
+
+    /**
+     * @param $rating This must include a comparison operator like: = >= <= > or <
+     * @return $this
+     */
+    public function byRating($rating)
+    {
+        return $this->byValue(array('rating' => $rating));
+    }
 }
