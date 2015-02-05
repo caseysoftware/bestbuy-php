@@ -19,15 +19,12 @@ class Client
     public $success  = false;
 
     /**
-     * @param $key
+     * @param $apiKey
      * @param null $httpClient
-     *
-     * @property mixed  stores      This is the stores subresource of the client.
-     * @property mixed  products    This is the products subresource of the client.
      */
-    public function __construct($key, $httpClient = null)
+    public function __construct($apiKey, $httpClient = null)
     {
-        $this->apiKey = $key;
+        $this->apiKey = $apiKey;
         $this->httpClient = (is_null($httpClient)) ? new Http\Client($this->baseURI) : $httpClient;
         $this->httpClient->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
     }

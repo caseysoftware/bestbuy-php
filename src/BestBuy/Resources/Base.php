@@ -10,9 +10,9 @@ abstract class Base implements \Iterator
 
     public $data = '';
 
-    public function __construct(\BestBuy\Client $client)
+    public function __construct($apiKey, \BestBuy\Client $client = null)
     {
-        $this->client = $client;
+        $this->client = is_null($client) ? new \BestBuy\Client($apiKey) : $client;
     }
 
     public function index($page = 1, $pagesize = 10)
