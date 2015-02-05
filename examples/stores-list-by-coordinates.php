@@ -4,9 +4,9 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-$stores = $client->stores->byCoordinates(71.3, -156.8, 1000);
+$stores = new \BestBuy\Stores($apikey);
+$storeList = $stores->byCoordinates(71.3, -156.8, 1000);
 
-foreach($stores as $store) {
+foreach($storeList as $store) {
     echo $store->name . "\n";
 }

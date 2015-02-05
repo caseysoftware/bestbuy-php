@@ -4,9 +4,10 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-$reviews = $client->reviews->byDate('2015-01-02');
+$reviews = new \BestBuy\Reviews($apikey);
+$reviewList = $reviews->byDate('2015-01-02');
 
-foreach($reviews as $review) {
+foreach($reviewList as $review) {
+
     echo $review->title . "\n";
 }

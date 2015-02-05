@@ -4,7 +4,7 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-$category = $client->categories->load('abcat0010000');
+$categories = new \BestBuy\Categories($apikey);
+$category = $categories->load('abcat0010000');
 
 print_r($category);

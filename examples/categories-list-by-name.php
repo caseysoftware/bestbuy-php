@@ -4,10 +4,10 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-$categories = $client->categories->byName('Leisure Gifts');
+$categories = new \BestBuy\Categories($apikey);
+$categoryList = $categories->byName('Leisure Gifts');
 
-foreach($categories as $category) {
+foreach($categoryList as $category) {
     echo $category->name . "\n";
 
     $paths = $category->path;

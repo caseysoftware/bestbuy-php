@@ -4,9 +4,9 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-$categories = $client->categories->index(1, 100);
+$categories = new \BestBuy\Categories($apikey);
+$categoryList = $categories->index(1, 100);
 
-foreach($categories as $category) {
+foreach($categoryList as $category) {
     echo $category->name . "\n";
 }

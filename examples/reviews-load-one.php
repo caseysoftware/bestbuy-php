@@ -4,7 +4,7 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-$review = $client->reviews->load(43826327);
+$reviews = new \BestBuy\Reviews($apikey);
+$review = $reviews->load(43826327);
 
 print_r($review);

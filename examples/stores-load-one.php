@@ -4,8 +4,7 @@
 require '../credentials.php';
 require '../vendor/autoload.php';
 
-$client = new \BestBuy\Client($apikey);
-
-$store = $client->stores->load(123);
+$stores = new \BestBuy\Stores($apikey);
+$store = $stores->load(123);
 
 print_r($store);
