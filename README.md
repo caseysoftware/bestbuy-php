@@ -1,6 +1,4 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/bestbuy-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/bestbuy-php/?branch=master)
-
-[![Code Climate](https://codeclimate.com/github/caseysoftware/bestbuy-php/badges/gpa.svg)](https://codeclimate.com/github/caseysoftware/bestbuy-php)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/bestbuy-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/bestbuy-php/?branch=master) [![Code Climate](https://codeclimate.com/github/caseysoftware/bestbuy-php/badges/gpa.svg)](https://codeclimate.com/github/caseysoftware/bestbuy-php)
 
 PHP Helper Library for Best Buy
 ================================
