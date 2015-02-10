@@ -12,7 +12,7 @@ The recommended way to install the Best Buy library is through [Composer](http:/
 curl -sS https://getcomposer.org/installer | php
 
 # Add the library as a dependency
-php composer.phar require caseysoftware/bestbuy-php dev-master@dev
+php composer.phar require caseysoftware/bestbuy-php ~1.0
 ```
 
 or alternatively, you can add it directly to your `composer.json` file.
@@ -20,7 +20,7 @@ or alternatively, you can add it directly to your `composer.json` file.
 ```json
 {
     "require": {
-        "caseysoftware/bestbuy-php": "~1"
+        "caseysoftware/bestbuy-php": "~1.0"
     }
 }
 ```
