@@ -6,7 +6,7 @@ use Guzzle\Http;
 
 class Client
 {
-    const USER_AGENT = 'bestbuy-php/0.0.1';
+    const USER_AGENT = 'bestbuy-php/1.0.0';
 
     protected $baseURI    = 'http://api.remix.bestbuy.com/v1/';
     protected $apiKey     = '';
