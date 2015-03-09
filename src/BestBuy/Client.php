@@ -61,6 +61,21 @@ class Client
         }
     }
 
+    public function put()
+    {
+        throw new \BestBuy\Exceptions\MethodNotImplemented('This API is read only.');
+    }
+
+    public function update()
+    {
+        throw new \BestBuy\Exceptions\MethodNotImplemented('This API is read only.');
+    }
+
+    public function delete()
+    {
+        throw new \BestBuy\Exceptions\MethodNotImplemented('This API is read only.');
+    }
+
     /**
      * @param $name
      * @return Categories|Products|Reviews|Stores
