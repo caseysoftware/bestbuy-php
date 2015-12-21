@@ -2,6 +2,7 @@
 
 namespace BestBuy;
 
+use BestBuy\Exceptions\InvalidAPIKey;
 use Guzzle\Http;
 
 class Client
@@ -52,6 +53,10 @@ class Client
         $this->response = $request->send();
         $this->httpCode = $this->response->getStatusCode();
         $this->success  = $this->response->isSuccessful();
+
+        if (4 == substr($this->httpCode, 0, 1)) {
+            throw new InvalidAPIKey('The specified API key did now work.');
+        }
 
         switch($this->format) {
             case 'xml':
