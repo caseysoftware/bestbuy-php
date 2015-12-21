@@ -36,6 +36,9 @@ Finally, require Composer's autoloader in your PHP script:
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
+
+To use any of the examples, rename credentials-dist.php to credentials.php and add your API key from here: https://remix.mashery.com/apps/mykeys
+
 ## TODO
 
 *  Implement lists for ~~Products~~, ~~Stores~~, ~~Reviews~~, ~~Categories~~, and Recommendations
