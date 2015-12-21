@@ -3,11 +3,11 @@
 namespace BestBuy;
 
 use BestBuy\Exceptions\InvalidAPIKey;
-use Guzzle\Http;
+use GuzzleHttp\Client as GuzzleClient;
 
 class Client
 {
-    const USER_AGENT = 'bestbuy-php/1.0.0';
+    const USER_AGENT = 'bestbuy-php/1.1.0';
 
     protected $baseURI    = 'http://api.remix.bestbuy.com/v1/';
     protected $apiKey     = '';
@@ -26,8 +26,9 @@ class Client
     public function __construct($apiKey, $httpClient = null)
     {
         $this->apiKey = $apiKey;
-        $this->httpClient = (is_null($httpClient)) ? new Http\Client($this->baseURI) : $httpClient;
-        $this->httpClient->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
+        $this->httpClient = (is_null($httpClient)) ? new GuzzleClient(
+                    ['base_uri' => $this->baseURI, 'headers' => ['User-Agent' => $this::USER_AGENT . '/' . PHP_VERSION ]]
+        ) : $httpClient;
     }
 
     /**

@@ -1,6 +1,6 @@
 {
     "name": "caseysoftware/bestbuy-php",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "library",
     "description": "A PHP wrapper for the Best Buy API",
     "keywords": [],
@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "guzzle/guzzle": "~3.7.0"
+        "guzzlehttp/guzzle": "~6.0"
     },
     "autoload": {
         "psr-4": { "BestBuy\\": "src/BestBuy/"}
