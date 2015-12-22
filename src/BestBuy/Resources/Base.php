@@ -17,7 +17,7 @@ abstract class Base implements \Iterator
 
     public function index($page = 1, $pagesize = 10)
     {
-        $result = $this->client->get($this->resource, array('pageSize' => $pagesize, 'page' => $page));
+        $result = $this->client->get($this->resource, ['pageSize' => $pagesize, 'page' => $page]);
         $this->data = $result[$this->resource];
 
         return $this;

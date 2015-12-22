@@ -46,24 +46,24 @@ class Client
         $parameters['format'] = $this->format;
         $parameters['apiKey'] = $this->apiKey;
 
-        $request = $this->httpClient->get($url, array(), array('exceptions' => false));
-        foreach($parameters as $key => $value) {
-            $request->getQuery()->set($key, $value);
-        }
+        $this->response = $this->httpClient->get($url, ['exceptions' => false, 'query' => $parameters] );
 
-        $this->response = $request->send();
         $this->httpCode = $this->response->getStatusCode();
-        $this->success  = $this->response->isSuccessful();
-
         if (4 == substr($this->httpCode, 0, 1)) {
-            throw new InvalidAPIKey('The specified API key did now work.');
+            throw new InvalidAPIKey('The request failed with the ' . $this->httpCode . ' response code.');
         }
+        if (2 == substr($this->httpCode, 0, 1)) {
+            // This is only to replace the isSuccessful() call the response used to support.
+            $this->success = true;
+        }
+
+        $raw_body = $this->response->getBody();
 
         switch($this->format) {
             case 'xml':
-                return $this->response->xml();
+                return simplexml_load_string($raw_body);
             default:
-                return $this->response->json();
+                return json_decode($raw_body, true);
         }
     }
 
