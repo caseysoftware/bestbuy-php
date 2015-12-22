@@ -1,6 +1,6 @@
 {
     "name": "caseysoftware/bestbuy-php",
-    "version": "1.1.0",
+    "version": "2.0.0",
     "type": "library",
     "description": "A PHP wrapper for the Best Buy API",
     "keywords": [],
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.5.0",
         "guzzlehttp/guzzle": "~6.0"
     },
     "autoload": {
