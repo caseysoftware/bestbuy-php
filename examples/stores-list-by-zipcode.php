@@ -5,7 +5,7 @@ require '../credentials.php';
 require '../vendor/autoload.php';
 
 $stores = new \BestBuy\Stores($apikey);
-$storeList = $stores->byZipcode('78745');
+$storeList = $stores->byZipcode('78702');
 
 foreach($storeList as $store) {
     echo $store->name . "\n";
