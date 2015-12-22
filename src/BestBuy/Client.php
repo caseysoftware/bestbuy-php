@@ -7,7 +7,7 @@ use GuzzleHttp\Client as GuzzleClient;
 
 class Client
 {
-    const USER_AGENT = 'bestbuy-php/1.1.0';
+    const USER_AGENT = 'bestbuy-php/2.0.0';
 
     protected $baseURI    = 'http://api.remix.bestbuy.com/v1/';
     protected $apiKey     = '';
@@ -49,9 +49,6 @@ class Client
         $this->response = $this->httpClient->get($url, ['exceptions' => false, 'query' => $parameters] );
 
         $this->httpCode = $this->response->getStatusCode();
-        if (4 == substr($this->httpCode, 0, 1)) {
-            throw new InvalidAPIKey('The request failed with the ' . $this->httpCode . ' response code.');
-        }
         if (2 == substr($this->httpCode, 0, 1)) {
             // This is only to replace the isSuccessful() call the response used to support.
             $this->success = true;
