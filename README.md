@@ -20,7 +20,7 @@ or alternatively, you can add it directly to your `composer.json` file.
 ```json
 {
     "require": {
-        "caseysoftware/bestbuy-php": "~1.0"
+        "caseysoftware/bestbuy-php": "~2.0"
     }
 }
 ```
